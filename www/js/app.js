@@ -20,3 +20,11 @@ var pi = 3.1416;
 var area = ((4/3)*pi*(radio*radio*radio));
 console.log("El volumen de la esfera es" +  area);
 
+var variableGlobal = "Vanessa";
+
+function diHola(){
+ variableGlobal = "Hola";
+ Console.log(variableGlobal)
+
+}
+console.log("Hola" + variableGlobal);
