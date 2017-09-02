@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex</title>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <style>
+    html {
+      box-sizing: border-box;
+      background:#ffc600;
+      font-family:'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+    }
+    body {
+      margin: 0;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    .panels {
+      min-height:100vh;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .panel {
+      background:#0c4d4f;
+      box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
+      color:white;
+      text-align: center;
+      align-items:center;
+      transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+      font-size: 20px;
+      background-size:cover;
+      background-position:center;
+      flex: 1;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    .panel1 { background-image:url(http://cdn.camptrend.com/wp-content/uploads/2015/05/Hanna-Yamamoto-Lodgepole-CampTrend.jpg); }
+    .panel2 { background-image:url(http://static1.squarespace.com/static/554dcc85e4b0f8a2393d2714/55ab98a5e4b03fdc82015595/55ab9962e4b0b69fc5b4a346/1442526984425/D01_0510-as-Smart-Object-3.jpg?format=1500w); }
+    .panel3 { background-image:url(https://www.thesun.co.uk/wp-content/uploads/2016/03/2503612.main_image.jpg?strip=all); }
+    .panel4 { background-image:url(http://www.spitzer.caltech.edu/uploaded_files/images/0008/4496/sig10-16_Med.jpg); }
+
+    
+    .panel > * {
+      margin:0;
+      width: 100%;
+      transition:transform 0.4s;
+      flex: 1 0 auto;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .panel > *:first-child { transform: translateY(-100%); }
+    .panel.open-active > *:first-child { transform: translateY(0); }
+    .panel > *:last-child { transform: translateY(100%); }
+    .panel.open-active > *:last-child { transform: translateY(0); }
+
+    .panel p {
+      text-transform: uppercase;
+      font-family: 'Amatic SC', cursive;
+      text-shadow:0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+      font-size: 2em;
+    }
+    .panel p:nth-child(2) {
+      font-size: 2em;
+    }
+
+    .panel.open {
+      flex: 4;
+      font-size:50px;
+    }
+
+  </style>
+
+
+  <div class="panels">
+    <div class="panel panel1">
+      <p>Look  </p>
+      <p>at the</p>
+      <p>stars </p>
+    </div>
+    <div class="panel panel2">
+      <p>Look how  </p>
+      <p>they shine</p>
+      <p>for you</p>
+    </div>
+    <div class="panel panel3">
+      <p>And  </p>
+      <p>everything</p>
+      <p>you do</p>
+    </div>
+    <div class="panel panel4">
+      <p>Yeah </p>
+      <p>they were</p>
+      <p>all yellow</p>
+    </div>
+  </div>
+
+  <script>
+    const panels = document.querySelectorAll('.panel');
+
+    function toggleOpen() {
+      console.log('Hello');
+      this.classList.toggle('open');
+    }
+
+    function toggleActive(e) {
+      console.log(e.propertyName);
+      if (e.propertyName.includes('flex')) {
+        this.classList.toggle('open-active');
+      }
+    }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+  </script>
+
+</body>
+</html>
