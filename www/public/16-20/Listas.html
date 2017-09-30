@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ordenar listas</title>
+</head>
+<body>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Helvetica; /*/Tipo del letra/*/
+      background: url("http://www.rockandpop.cl/wp-content/uploads/2016/09/pandas-live_64dff22c2fe56e9.jpg");
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    #bands {
+      list-style: inside square; /*/especifica donde será colocado el marcador de la lista en relación a la caja principal./*/
+      font-size: 20px;
+      background:#FFFFFF;
+      width: 500px;
+      margin: auto;
+      padding: 0;
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+    #bands li {
+      list-style-image: url("https://ae01.alicdn.com/kf/HTB1ByShIpXXXXbTXFXXq6xXFXXXV/38cm-15-Kawaii-Panda-Simulation-Stuffed-Plush-Pandas-Cute-Plush-Toys-Doll-Soft-Stuffed-Animals-Baby.jpg_50x50.jpg");
+
+     /*/ border-bottom: 1px solid #040101;/*/
+      padding: 20px;
+    }
+    #bands li:last-child {
+      /*/ border-bottom: 1px solid #040101;/*/
+      list-style-image: url("https://ae01.alicdn.com/kf/HTB1ByShIpXXXXbTXFXXq6xXFXXXV/38cm-15-Kawaii-Panda-Simulation-Stuffed-Plush-Pandas-Cute-Plush-Toys-Doll-Soft-Stuffed-Animals-Baby.jpg_50x50.jpg");
+    }
+
+    a {
+      color: rgb(243, 236, 236);
+      text-decoration: none;
+    }
+
+  </style>
+
+  <ul id="bands"></ul>  
+
+<script>
+const bands = ['Laura', 'Juan', 'Pepe', 'Arturo', 'Cristian','daniel', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+
+function strip(bandName) {
+  return bandName.replace(/^(a |the |an)/i, '').trim(); /*/suprime blancos o las apariciones de otro carácter especificado/*/
+
+}
+ /*/const sortedBands = bands.sort(function(a, b){
+  if(strip(a)> strip(b)){
+    return 1 ;
+  }else{
+    return -1;
+  }
+});/*/
+const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1); /*/ sort ordena los elementos de un array localmente y devuelve el array/*/
+
+document.querySelector('#bands').innerHTML =   /*/Devuelve el primer elemento del documento que coincida con el grupo especificado de selectores./*/
+  sortedBands                                   /*/cambia o devuelve la sintaxis /*/
+    .map(band => `<li>${band}</li>`)
+    .join('');
+
+console.log(sortedBands);
+
+</script>
+
+</body>
+</html>
