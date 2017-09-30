@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Understanding JavaScript's Capture</title>
+  <title>Cuadros</title>
 </head>
 <body class="bod">
 
@@ -25,15 +25,15 @@
   }
 
   .one {
-    background: thistle;
+    background: black;
   }
 
   .two {
-    background:mistyrose;
+    background:grey;
   }
 
   .three {
-    background:coral;
+    background:white;
   }
 </style>
 
@@ -44,8 +44,7 @@
 
   function logText(e) {
     console.log(this.classList.value);
-    // e.stopPropagation(); // stop bubbling!
-    // console.log(this);
+
   }
 
   divs.forEach(div => div.addEventListener('click', logText, {

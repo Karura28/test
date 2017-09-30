@@ -31,7 +31,7 @@ body.fixed-nav .site-wrap {
 header {
   text-align: center;
   height:50vh;
-  background:url(http://wes.io/iEgP/wow-so-deep.jpg) bottom center no-repeat;
+  background:url(https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/virtual_console_wii_u_7/H2x1_WiiUVC_EarthBound.jpg) bottom center no-repeat;
   background-size:cover;
   display:flex;
   align-items:center;
@@ -39,13 +39,13 @@ header {
 }
 
 h1 {
-  color:white;
+  color:grey;
   font-size: 7vw;
   text-shadow: 3px 4px 0 rgba(0,0,0,0.2)
 }
 
 nav {
-  background:black;
+  background:blue;
   top:0;
   width: 100%;
   transition:all 0.5s;

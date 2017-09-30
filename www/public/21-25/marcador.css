@@ -6,7 +6,7 @@ html {
 }
 body {
   min-height: 100vh;
-  margin: 0; /* Important! */
+  margin: 0; 
   font-family: sans-serif;
   background:
     linear-gradient(45deg, hsla(340, 100%, 55%, 1) 0%, hsla(340, 100%, 55%, 0) 70%),
@@ -35,7 +35,7 @@ a {
   border-bottom:2px solid white;
   position: absolute;
   top:0;
-  background:white;
+  background:pink;
   left:0;
   z-index: -1;
   border-radius:20px;
